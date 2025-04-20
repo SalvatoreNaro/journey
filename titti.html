@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!--Website create by SALVATORE NARO-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Journey Salvatore</title>
+
+ 
+    
+    <meta name="theme-color" content="#5865F2">
+    <meta property="og:site_name" content="3D Portfolio">
+    
+    
+    <link rel="icon" type="image/png" href="./preview.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link href="titti.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+   
+    <canvas id="bg" class="fixed top-0 left-0 -z-10"></canvas>
+
+    
+    <nav class="fixed top-0 w-full z-50 px-8 py-4 perspective-1000" role="navigation" aria-label="Main navigation">
+        <div
+            class="glass-effect max-w-7xl mx-auto transform-style-3d hover:rotate-x-2 transition-transform duration-300">
+            <div class="flex justify-between items-center p-4 nav-content">
+                <div
+                    class="text-2xl font-bold gradient-text transform translate-z-8 hover:translate-z-12 transition-transform">
+                    <a href="#" aria-label="Home">Portfolio</a>
+                </div>
+                <button class="md:hidden nav-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="hidden md:flex space-x-8 nav-links">
+                    <a href="#home"
+                        class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Home</a>
+                    <a href="#projects"
+                        class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Projects</a>
+                    <a href="#skills"
+                        class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Skills</a>
+                    <a href="#contact"
+                        class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  
+    <main class="relative">
+      
+        <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden">
+          
+            <div class="absolute inset-0">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div class="w-[500px] h-[500px] rounded-full border border-blue-500/20 animate-spin-slow"></div>
+                    <div class="absolute top-1/2 left-1/2 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 
+                                rounded-full border border-purple-500/20 animate-spin-reverse"></div>
+                    <div class="absolute top-1/2 left-1/2 w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2 
+                                rounded-full border border-pink-500/20 animate-pulse"></div>
+                </div>
+            </div>
+
+          
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="particle-container">
+                    <div class="particle bg-blue-500/30 blur-sm"></div>
+                    <div class="particle bg-purple-500/30 blur-sm"></div>
+                    <div class="particle bg-pink-500/30 blur-sm"></div>
+                </div>
+            </div>
+
+           
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center space-y-8">
+                    
+                    <h1 class="text-7xl md:text-9xl font-bold tracking-tight">
+                        <span class="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+                                   bg-clip-text text-transparent animate-gradient">
+                            Creative
+                        </span>
+                        <span class="block mt-2 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+                                   bg-clip-text text-transparent animate-gradient-delay">
+                            Developer
+                        </span>
+                    </h1>
+
+                 
+                    <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed
+                              transform hover:scale-105 transition-transform duration-300">
+                        Creo contenuti grafici e visivi usando Three,gsap e react
+                    </p>
+
+                  
+                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-12">
+                  
+                        <a href="#projects" class="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                                  rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/25 
+                                  transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="absolute inset-0 bg-white/20 group-hover:scale-125 transition-transform duration-500">
+                            </div>
+                            <span class="relative flex items-center">
+                                View Projects
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </a>
+
+                      
+                        <a href="#contact" class="group px-8 py-4 rounded-xl border border-purple-500/30 
+                                  hover:border-purple-500/50 backdrop-blur-sm
+                                  transition-all duration-300 hover:-translate-y-1
+                                  hover:bg-purple-500/10">
+                            <span class="flex items-center">
+                                Let's Talk
+                                <i class="fas fa-comments ml-2 group-hover:rotate-12 transition-transform"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                   
+                    <div class="flex justify-center gap-6 mt-12">
+                        <a href="#" class="social-icon-link group">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center
+                                        border border-blue-500/30 hover:border-blue-500
+                                        transition-all duration-300 hover:-translate-y-1
+                                        hover:shadow-lg hover:shadow-blue-500/25">
+                                <i class="fab fa-github text-xl group-hover:scale-110 transition-transform"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="social-icon-link group">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center
+                                        border border-purple-500/30 hover:border-purple-500
+                                        transition-all duration-300 hover:-translate-y-1
+                                        hover:shadow-lg hover:shadow-purple-500/25">
+                                <i class="fab fa-linkedin text-xl group-hover:scale-110 transition-transform"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="social-icon-link group">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center
+                                        border border-pink-500/30 hover:border-pink-500
+                                        transition-all duration-300 hover:-translate-y-1
+                                        hover:shadow-lg hover:shadow-pink-500/25">
+                                <i class="fab fa-twitter text-xl group-hover:scale-110 transition-transform"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   
+        <section id="projects" class="min-h-screen px-8 py-32">
+            
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+                           bg-clip-text text-transparent">
+                    I miei progetti
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+                    Esplora i miei ultimi progetti
+                </p>
+            </div>
+
+       
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="earth.gif" alt="Project 1" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="kro.html"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                                </a>
+                                <a href="#"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Code
+                                </a>
+                            </div>
+                        </div>
+
+                      
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 
+                                       bg-clip-text text-transparent group-hover:from-blue-500 
+                                       group-hover:to-purple-500 transition-all duration-300">
+                                MetaAI
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                              Ho rivestito il ruolo come developer nell'azienda Meta per la nuova ai
+                              mi sono divertito in tale impresa.
+                            </p>
+
+                          
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-blue-500/10 text-blue-400 border border-blue-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-blue-500/20 transition-colors">
+                                    React
+                                </span>
+                                <span class="tech-pill bg-purple-500/10 text-purple-400 border border-purple-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-purple-500/20 transition-colors">
+                                    Three.js
+                                </span>
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    GSAP
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                        
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="sakrim.gif" alt="Project 2" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="chat-bi.html"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-desktop mr-2"></i>Live Site
+                                </a>
+                                <a href="#"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Repository
+                                </a>
+                            </div>
+                        </div>
+
+                       
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 
+                                       bg-clip-text text-transparent group-hover:from-purple-500 
+                                       group-hover:to-pink-500 transition-all duration-300">
+                                Chat-B
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                La mia Ai creata nel 2023 ed e ancora in fase di sviluppo,
+                                chat-b si differenzia dalle altre ai per il suo stile e calcolo.
+                            </p>
+
+                           
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-purple-500/10 text-purple-400 border border-purple-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-purple-500/20 transition-colors">
+                                    Next
+                                </span>
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-indigo-500/20 transition-colors">
+                                    React
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+               
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Line Cube GIF.gif" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="file:///C:/Users/salva/OneDrive/Documenti/windows.html"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Live
+                                </a>
+                                <a href="#"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                App web
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                Ho sempre desiderato di creare archimede, un registro
+                                per la scuola virtuale.Sono riuscito a crearlo in 2 giorni
+                                pero ancora mi mancano alcune sezioni. 
+                        
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    PhP
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    customtkinter
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Vue
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+         
+            <div class="text-center mt-16">
+                <a href="#" class="inline-flex items-center justify-center px-8 
+                                   rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 
+                                   hover:from-blue-500/20 hover:to-purple-600/20 
+                                   border border-white/10 transition-all duration-300
+                                   group-hover:border-blue-500/50 text-white">
+                    View More
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </section>
+
+        
+        <section id="skills" class="min-h-screen px-8 py-32 relative">
+           
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent"></div>
+
+      
+            <div class="text-center mb-20 relative z-10">
+                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+                           bg-clip-text text-transparent">
+                    Linguaggi
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+                    Questi sono i vari linguaggi che uso
+                </p>
+            </div>
+
+           
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto relative z-10">
+                
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-blue-500/50">
+                    <div class="text-6xl mb-4 text-blue-500 group-hover:animate-bounce">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">React</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 w-[90%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">professionista</p>
+                </div>
+
+             
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-green-500/50">
+                    <div class="text-6xl mb-4 text-green-500 group-hover:animate-bounce">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Node</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500 w-[85%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">intermedio</p>
+                </div>
+
+                
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-yellow-500/50">
+                    <div class="text-6xl mb-4 text-yellow-500 group-hover:animate-bounce">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">MongoDB</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-yellow-500 to-orange-500 w-[80%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Intermedio</p>
+                </div>
+
+              
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-purple-500/50">
+                    <div class="text-6xl mb-4 text-purple-500 group-hover:animate-bounce">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Three.js</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[75%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Professionista</p>
+                </div>
+
+               
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-pink-500/50">
+                    <div class="text-6xl mb-4 text-pink-500 group-hover:animate-bounce">
+                        <i class="fab fa-figma"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Figma</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-pink-500 to-rose-500 w-[85%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">intermedio</p>
+                </div>
+
+                
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-gray-500/50">
+                    <div class="text-6xl mb-4 text-gray-500 group-hover:animate-bounce">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Mysql</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-gray-500 to-slate-500 w-[90%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">professionista</p>
+                </div>
+
+                
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-orange-500/50">
+                    <div class="text-6xl mb-4 text-orange-500 group-hover:animate-bounce">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">AWS</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-orange-500 to-red-500 w-[70%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Intermedio</p>
+                </div>
+
+               
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-teal-500/50">
+                    <div class="text-6xl mb-4 text-teal-500 group-hover:animate-bounce">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Jest</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-teal-500 to-cyan-500 w-[80%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">professionista</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        
+        <section class="timeline-section min-h-screen px-8 py-32 relative">
+           
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent"></div>
+            <div class="absolute inset-0 overflow-hidden">
+                <div
+                    class="absolute w-full h-[1px] top-1/2 left-0 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent">
+                </div>
+            </div>
+
+         
+            <div class="text-center mb-20 relative">
+                <h2
+                    class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Le mie capacita
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+                    cosa sto facendo?
+                </p>
+            </div>
+
+          
+            <div class="max-w-6xl mx-auto relative">
+                
+                <div
+                    class="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-blue-500/20 via-purple-500/20 to-pink-500/20">
+                </div>
+
+               
+                <div class="space-y-20">
+                    
+                    <div class="relative group">
+                       
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                    w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 
+                                    flex items-center justify-center z-10
+                                    group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold">2025</span>
+                        </div>
+
+                       
+                        <div class="ml-[55%] relative">
+                            <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                       transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                       group-hover:border-blue-500/50">
+                                
+                                <div class="absolute -left-16 top-1/2 transform -translate-y-1/2
+                                            w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-600/10
+                                            flex items-center justify-center">
+                                    <i class="fas fa-rocket text-2xl text-blue-400"></i>
+                                </div>
+
+                               
+                                <h3
+                                    class="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                                    Software-engineer
+                                </h3>
+                                <p class="text-gray-400 mb-4">
+                                    Attualmente,mi sto focalizzando sulla costruzione di software e ai
+                                    sia per me stesso come chat-b ma anche per aziende multinazioneli come gemini
+                                    e google.
+                                </p>
+
+                                
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-sm bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                        Python
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 rounded-full text-sm bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                        Javascript
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 rounded-full text-sm bg-pink-500/10 text-pink-400 border border-pink-500/20">
+                                        PhP
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="relative group">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                    w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 
+                                    flex items-center justify-center z-10
+                                    group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold">2024</span>
+                        </div>
+
+                        <div class="mr-[55%] relative">
+                            <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                       transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                       group-hover:border-purple-500/50">
+                                <div class="absolute -right-16 top-1/2 transform -translate-y-1/2
+                                            w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-600/10
+                                            flex items-center justify-center">
+                                    <i class="fas fa-code text-2xl text-purple-400"></i>
+                                </div>
+
+                                <h3
+                                    class="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                                    Designer
+                                </h3>
+                                <p class="text-gray-400 mb-4">
+                                    Creo webapp e appweb usando html,css,js,three,vue,gsap,node,react
+                                    e PhP per il database.Mi diverto a creare esperienze digitali interattive.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-sm bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                        JavaScript
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 rounded-full text-sm bg-pink-500/10 text-pink-400 border border-pink-500/20">
+                                        CSS
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="services" class="py-32 relative overflow-hidden">
+
+
+            <div class="container mx-auto px-4 relative z-10">
+                
+                <div class="text-center mb-20 space-y-4">
+                    <h2
+                        class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        Servizi
+                    </h2>
+                    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+                        Trasforma idee in esperienze digitali
+                    </p>
+                </div>
+
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                   
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                   transition-all duration-300 hover:scale-105 hover:bg-white/10
+                                   flex flex-col h-full overflow-hidden">
+                            
+                            <div class="mb-6 relative">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 
+                                          flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                                    <i class="fas fa-code text-3xl text-white"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full"></div>
+                            </div>
+
+                      
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+                                Web Development
+                            </h3>
+                            <p class="text-gray-400 mb-6 flex-grow">
+                                Vuoi imparare e creare sitiweb?
+                            </p>
+
+                          
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                    Responsive Design
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                                    Interactive
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                                    Modern
+                                </li>
+                            </ul>
+
+                          
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 
+                                                  rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 
+                                                  hover:from-blue-500/20 hover:to-purple-600/20 
+                                                  border border-white/10 transition-all duration-300
+                                                  group-hover:border-blue-500/50 text-white">
+                                Learn More
+                                <i
+                                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                  
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                   transition-all duration-300 hover:scale-105 hover:bg-white/10
+                                   flex flex-col h-full overflow-hidden">
+                            <div class="mb-6 relative">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 
+                                          flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                                    <i class="fas fa-cube text-3xl text-white"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full"></div>
+                            </div>
+                            <h3
+                                class="text-2xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors">
+                                3D Development
+                            </h3>
+                            <p class="text-gray-400 mb-6 flex-grow">
+                                Vuoi creare esperienze digitali 3d?
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                                    Three.js
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                                    React
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-rose-500 rounded-full mr-3"></span>
+                                    Gsap
+                                </li>
+                            </ul>
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 
+                                                  rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-600/10 
+                                                  hover:from-purple-500/20 hover:to-pink-600/20 
+                                                  border border-white/10 transition-all duration-300
+                                                  group-hover:border-purple-500/50 text-white">
+                                Learn More
+                                <i
+                                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                   
+                   
+                </div>
+            </div>
+        </section>
+
+        <section class="min-h-screen px-8 py-32 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
+            
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+            </div>
+        
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                        Testimoni
+                    </h2>
+                    <p class="text-gray-400 text-lg md:text-xl mt-4">Cosa pensano i clienti dei miei lavori ?</p>
+                </div>
+        
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 h-full
+                                    transform transition-all duration-500 hover:scale-[1.02]
+                                    hover:border-blue-500/30 hover:bg-white/10">
+                            <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+                                <span class="text-7xl text-blue-500/20 font-serif">"</span>
+                            </div>
+                            
+                            <div class="relative">
+                                <p class="text-gray-300 mb-6 italic">
+                                    Lavoro eccezzionale,sono rimasto incredulo e sbalordito del portfolio che ha creato.
+                                    Complimenti!
+                            
+                            
+                                </p>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 
+                                              flex items-center justify-center text-xl font-bold text-white">
+                                        GF
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-medium">Giulio Fantuzzo</h4>
+                                        <p class="text-gray-400 text-sm">Co-Vice,HorrizonAI</p>
+                                    </div>
+                                    <div class="ml-auto flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 h-full
+                                    transform transition-all duration-500 hover:scale-[1.02]
+                                    hover:border-purple-500/30 hover:bg-white/10">
+                            <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+                                <span class="text-7xl text-purple-500/20 font-serif">"</span>
+                            </div>
+                            
+                            <div class="relative">
+                                <p class="text-gray-300 mb-6 italic">
+                                    Incredibile talento,un ragazzo molto bravo nel proprio lavoro 
+                                    ti riesce a creare l'impossibile e l'imagginabile.
+                                </p>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 
+                                              flex items-center justify-center text-xl font-bold text-white">
+                                        NR
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-medium">Nicolas Riggi</h4>
+                                        <p class="text-gray-400 text-sm">Software-Engineer</p>
+                                    </div>
+                                    <div class="ml-auto flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 h-full
+                                    transform transition-all duration-500 hover:scale-[1.02]
+                                    hover:border-pink-500/30 hover:bg-white/10">
+                            <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+                                <span class="text-7xl text-pink-500/20 font-serif">"</span>
+                            </div>
+                            
+                            <div class="relative">
+                                <p class="text-gray-300 mb-6 italic">
+                                   Ho chiesto un sitoweb 3d e interattivo ed e riuscito a crearlo
+                                   in tempi molto brevi.Chiamatelo se volete un sitoweb WOW!
+                                </p>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 
+                                              flex items-center justify-center text-xl font-bold text-white">
+                                        GM
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-medium">Giuseppe Milia</h4>
+                                        <p class="text-gray-400 text-sm">Designer</p>
+                                    </div>
+                                    <div class="ml-auto flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="contact" class="min-h-screen px-8 py-32 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent"></div>
+            
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                        Contattami
+                    </h2>
+                    <p class="text-gray-400 text-lg md:text-xl mt-4">
+                        Creiamo qualcosa insieme
+                    </p>
+                </div>
+
+                <div class="glass-effect p-8 md:p-12 rounded-2xl backdrop-blur-xl border border-white/10 hover:border-blue-500/30 transition-colors">
+                    <form class="space-y-8" novalidate>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="group">
+                                <label for="name" class="block text-gray-400 text-sm mb-2">Nome</label>
+                                <div class="relative">
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 outline-none text-white placeholder-gray-500" placeholder="John Doe">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <label for="email" class="block text-gray-400 text-sm mb-2">Email</label>
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 outline-none text-white placeholder-gray-500" placeholder="john@example.com">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <label for="subject" class="block text-gray-400 text-sm mb-2">Subject</label>
+                            <div class="relative">
+                                <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-pink-500/50 focus:ring-2 focus:ring-pink-500/20 transition-all duration-300 outline-none text-white placeholder-gray-500" placeholder="Project Inquiry">
+                                <div class="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-rose-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <label for="message" class="block text-gray-400 text-sm mb-2">Message</label>
+                            <div class="relative">
+                                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 outline-none resize-none text-white placeholder-gray-500" placeholder="Your message here..."></textarea>
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full group relative px-8 py-4 bg-gradient-to-r from-blue-500/80 to-purple-600/80 rounded-xl overflow-hidden transition-all duration-300 hover:from-blue-500 hover:to-purple-600 focus:ring-2 focus:ring-purple-500/20 outline-none">
+                            <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                            <span class="relative flex items-center justify-center font-semibold text-white">
+                                Send Message
+                                <i class="fas fa-paper-plane ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </button>
+                    </form>
+
+                    <div class="mt-12 pt-12 border-t border-white/10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <a href="salvatorenaro009@gmail.com" class="group flex items-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/30 transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope text-blue-400"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-white font-medium">Email</h4>
+                                    <p class="text-gray-400 text-sm">salvatorenaro009@egmail.com</p>
+                                </div>
+                            </a>
+
+                            <div class="group flex items-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-map-marker-alt text-purple-400"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-white font-medium">Location</h4>
+                                    <p class="text-gray-400 text-sm">IT, Sicilia</p>
+                                </div>
+                            </div>
+
+                            <a href="tel:+1234567890" class="group flex items-center p-4 rounded-xl bg-white/5 border border-white/10 hover:border-pink-500/30 transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-phone text-pink-400"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-white font-medium">Phone</h4>
+                                    <p class="text-gray-400 text-sm">+39 3500266560</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+    <footer class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <div class="footer-3d-shapes absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">About</h3>
+                    <p class="text-gray-400 mb-6">Sono un designer e creo esperienze digitali molto entusiasmanti e immense,chiamami anche Totò my friend</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-colors group">
+                            <i class="fab fa-github text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-colors group">
+                            <i class="fab fa-linkedin text-gray-400 group-hover:text-purple-400 transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 hover:border-pink-500/50 hover:bg-white/10 transition-colors group">
+                            <i class="fab fa-twitter text-gray-400 group-hover:text-pink-400 transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#home" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Projects
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skills" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Skills
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent mb-6">Contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-400 hover:text-white transition-colors group">
+                            <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center mr-3 border border-white/10 group-hover:border-pink-500/50 transition-colors">
+                                <i class="fas fa-envelope text-sm group-hover:text-pink-400 transition-colors"></i>
+                            </div>
+                            <a href="mailto:salvatorenaro009@gmail.com">salvatorenaro009@gmail.com</a>
+                        </li>
+                        <li class="flex items-center text-gray-400 hover:text-white transition-colors group">
+                            <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center mr-3 border border-white/10 group-hover:border-pink-500/50 transition-colors">
+                                <i class="fas fa-map-marker-alt text-sm group-hover:text-pink-400 transition-colors"></i>
+                            </div>
+                            <span>Your Location</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">&copy; 2025 Salvatore Naro. All rights reserved.</p>
+                    <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="titti.js"></script>
+</body>
+
+</html>
+
+</html>
